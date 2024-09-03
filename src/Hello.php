@@ -1,7 +1,7 @@
 <?php
 namespace ikeaper\mephp;
 class Hello{
-    public function say()
+    static public function say()
     {
         echo "hello world";
     }
