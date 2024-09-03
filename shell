@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+/*
+ * $argc:命令行传入参数个数
+ * $argv 命令行传入参数数组
+ *
+ * getopt('a:b:')  -a ss -b ss 接收 a,b对应的数组
+
+ */
+
+//print_r($argv);
+//echo __DIR__;
+$param_arr = getopt('a:b:');
+//print_r($param_arr);
+
+define('MEPHP_START', microtime(true));
+
+require __DIR__.'/vendor/autoload.php';
+
+
+use Ikeaper\Mephp\Hello;
+
+Hello::say();

@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+
+<?php
+$descriptors = array(
+    0 => array("pipe", "r"),  // 标准输入
+    1 => array("pipe", "w"),  // 标准输出
+    2 => array("pipe", "w"),  // 标准错误输出
+);
+
+$env = array('PATH' => '/usr/local/bin:/usr/bin:/bin');
+
+$cwd = '/Users/joseph/Documents/code/php/mephp/www';
+
+$cmd = 'php -S localhost:8000';
+
+$process = proc_open($cmd, $descriptors, $pipes, $cwd, $env);
+
+if (is_resource($process)) {
+    // 你的 HTTP 服务现在运行中...
+    // 可以处理 $pipes 来与进程交互
+    fwrite(STDOUT, "HTTP服务已启动，按任意键停止服务,localhost:8000...\n");
+    fscanf(STDIN, "\n");
+
+    // 停止 HTTP 服务
+    proc_close($process);
+} else {
+    die("无法启动 HTTP 服务");
+}
+?>

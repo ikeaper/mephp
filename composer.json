@@ -3,7 +3,8 @@
     "description": "mephp frame",
     "type": "library",
     "require": {
-        "php": ">5.4"
+        "php": ">5.4",
+        "ikeaper/mephp": "1.0.4"
     },
     "license": "Apache-2.0",
     "autoload": {
