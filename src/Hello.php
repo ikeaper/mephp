@@ -1,5 +1,5 @@
 <?php
-namespace ikeaper\mephp;
+namespace Ikeaper\Mephp;
 class Hello{
     static public function say()
     {
